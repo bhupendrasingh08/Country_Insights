@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Caprasimo&family=Roboto+Slab:wght@400;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto Slab", sans-serif;
+  line-height: 1.5;
+  color: #383738;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: radial-gradient(
+    circle at top,
+    rgba(241, 210, 70, 0.98),
+    rgba(201, 128, 56, 0.87)
+  );
+  min-height: 100dvh;
+  margin-bottom: 3rem;
+}
+
+header img {
+  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.4));
+}
+
+header h1 {
+  font-family: "Caprasimo", cursive;
+  margin: 0 auto 3rem auto;
+  color: #3f3b00;
+}
+
+.card {
+  transition: max-height 500ms ease;
+}
+
+.card:hover {
+  scale: 1.01;
+}
+
+.expand {
+  max-height: 50rem;
+}
+
+@media (max-width: 640px) {
+  .expand {
+    max-height: 100rem;
+  }
+
+  .flag-image {
+    margin: auto;
+    width: 5rem;
+  }
+}
+
+.hide-content {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.1s 0.4s linear, opacity 0.1s 0.4s linear;
+}
+
+.show-content {
+  visibility: visible;
+  opacity: 1;
+}
