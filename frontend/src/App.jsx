@@ -9,6 +9,7 @@ function App() {
   const [error, setError] = useState("");
   const [errorStatus, setErrorStatus] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const baseURL = "https://country-insights-api.vercel.app";
 
   const fetchCountryInfo = async (countryName) => {
     if (!countryName) {
@@ -19,9 +20,7 @@ function App() {
     }
     try {
       setIsLoading(() => true);
-      const response = await fetch(
-        `http://localhost:3000/country/${countryName}`
-      );
+      const response = await fetch(`${baseURL}/country/${countryName}`);
       const data = await response.json();
       setIsLoading(() => false);
       if (data.status == 500) {
